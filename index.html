@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title" id="title">freeCodeCamp<br>Survey Form</h1>
+      <p class="subheading" id="description">
+        Thank you for taking the time to help us improve the platform
+      </p>
+    </header> <!-- .header -->
+    <main class="main">
+      <form id="survey-form" method="post">
+        <fieldset>
+          <label for="name" id="name-label">Name
+            <input type="text" id="name" name="name" placeholder="Enter your name..." required>
+          </label>
+          <label for="email" id="email-label">Email
+            <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+          </label>
+          <label for="number" id="number-label">Age<span class="description">(optional)</span>
+            <input type="number" id="number" name="number" min="15" max="110" placeholder="Age...">
+          </label>
+        </fieldset> <!-- fieldset personal info -->
+        <fieldset>
+          <legend>Which option best describes your current role?</legend>
+          <label for="dropdown" class="select">
+            <select id="dropdown" name="dropdown">
+              <option selected disabled value="" class="disabled">Select current role</option>
+              <option value="student">Student</option>
+              <option value="ftjob">Full Time Job</option>
+              <option value="ftlearner">Full Time Learner</option>
+              <option value="prefernotsay">Prefer not to say</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+        </fieldset> <!-- fieldset current role -->
+        <fieldset>
+          <legend>Would you recommend freeCodeCamp to a friend?</legend>
+          <label for="definetely">
+            <input type="radio" name="user-recommend" id="definetely" value="definetely">
+            Definetely
+          </label>
+          <label for="maybe">
+            <input type="radio" name="user-recommend" id="maybe" value="maybe">
+            Maybe
+          </label>
+          <label for="not-sure">
+            <input type="radio" name="user-recommend" id="not-sure" value="not-sure">
+            Not sure
+          </label>
+        </fieldset> <!-- fieldset user-recommend -->
+        <fieldset>
+          <legend>What is your favorite feature of freeCodeCamp?</legend>
+          <label for="features" class="select">
+            <select id="features" name="features" class="form-control">
+              <option disabled selected value="" class="disabled">Select an option</option>
+              <option value="challenges">Challenges</option>
+              <option value="community">Community</option>
+              <option value="projects">Projects</option>
+              <option value="open-source">Open source</option>
+            </select>
+          </label>
+        </fieldset> <!-- fieldset user's favorite feature -->
+        <fieldset>
+          <legend>What would you like to see improved?<span class="description">(check all that apply)</span></legend>
+          <label for="frontend-projects">
+            <input type="checkbox" id="frontend-projects" name="improve" value="frontend-projects">
+            Front-end Projects
+          </label>
+          <label for="backend-projects">
+            <input type="checkbox" id="backend-projects" name="improve" value="backend-projects">
+            Back-end Projects
+          </label>
+          <label for="data-visualization">
+            <input type="checkbox" id="data-visualization" name="improve" value="data-visualization">
+            Data Visualization
+          </label>
+          <label for="challenges">
+            <input type="checkbox" id="challenges" name="improve" value="challengues">
+            Challenges
+          </label>
+          <label for="open-source-community">
+            <input type="checkbox" id="open-source-community" name="improve" value="open-source-community">
+            Open Source community
+          </label>
+          <label for="gitter">
+            <input type="checkbox" id="gitter" name="improve" value="gitter">
+            Gitter help rooms
+          </label>
+          <label for="videos">
+            <input type="checkbox" id="videos" name="improve" value="videos">
+            Videos
+          </label>
+          <label for="city-meetups">
+            <input type="checkbox" id="city-meetups" name="improve" value="city-meetups">
+            City Meetups
+          </label>
+          <label for="wiki">
+            <input type="checkbox" id="wiki" name="improve" value="wiki">
+            Wiki
+          </label>
+          <label for="forum">
+            <input type="checkbox" id="forum" name="improve" value="forum">
+            Forum
+          </label>
+          <label for="additional-courses">
+            <input type="checkbox" id="additional-courses" name="improve" value="additional-courses">
+            Additional Courses
+          </label>
+        </fieldset> <!-- fieldset improves -->
+        <fieldset>
+          <legend>Any comments or suggestions?</legend>
+          <label for="placeholder">
+            <textarea id="placeholder" placeholder="Enter your comment here..."></textarea>
+          </label>
+        </fieldset> <!-- fieldset textarea -->
+        <button type="submit" id="submit" value="submit" class="submit-button">Send!</button>
+      </form> <!-- form-->
+    </main> <!-- main -->
+  </body>
+</html>
