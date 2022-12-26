@@ -1,14 +1,14 @@
-![Desktop design](design/desktop-design.png)
 # freeCodeCamp - Survey form solution
 
-This is a [solution](https://tomasmansilla.github.io/tribute_page/) to the [survey form challenge on freeCodeCamp](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form). freeCodeCamp is a community of millions of people around the world who are learning to code together. 
+![Desktop design](design/desktop-design.png)
+
+This is a [solution](https://tomasmansilla.github.io/tribute_page/) to the [survey form challenge on freeCodeCamp](https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form). freeCodeCamp is a community of millions of people around the world who are learning to code together.
 
 ## Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -28,10 +28,9 @@ Users should be able to:
 ### Screenshot
 
 - Desktop Design:
-![desktop-design](/design/desktop-design.png "desktop design")
+  ![desktop-design](/design/desktop-design.png "desktop design")
 - Mobile Design:
-![mobile-design](/design/mobile-design.png "mobile design")
-
+  ![mobile-design](/design/mobile-design.png "mobile design")
 
 ## My process
 
