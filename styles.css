@@ -77,7 +77,6 @@ body {
   color: var(--light-text-color);
 }
 
-
 @media (min-width: 35em) {
   :root {
     --gap: 0.8em;
@@ -96,7 +95,7 @@ body {
 
 @media (min-width: 50em) {
   :root {
-    --gap: 0.9em; 
+    --gap: 0.9em;
 
     --input-font-size: 0.9rem;
   }
@@ -105,7 +104,6 @@ body {
     padding: 4em;
   }
 }
-
 
 fieldset {
   border: none;
