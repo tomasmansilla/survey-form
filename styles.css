@@ -4,7 +4,6 @@
 
 :root {
   box-sizing: border-box;
-  font-size: 16px;
 
   --bg-color: #fffffe;
   --form-color: #232946;
@@ -12,11 +11,16 @@
   --button-color: #eebbc3;
   --input-color: #b8c1ec;
 
-  --title-color: #232946;
-  --text-description-color: #232946;
-  --input-text-color: #232946;
-  --text-color: #b8c1ec;
-  --button-text-color: #232946;
+  --dark-text-color: #232946;
+  --light-text-color: #b8c1ec;
+
+  --gap: 1.2em;
+
+  --input-height: 4em;
+  --input-font-size: 0.9rem;
+  --input-padding: 1em;
+
+  --roboto: "Roboto Mono", monospace;
 }
 
 *,
@@ -28,24 +32,29 @@
 }
 
 body {
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--roboto);
   background-color: var(--bg-color);
 }
 
-/* header */
+@media screen and (min-width: 35em) {
+  body {
+    padding: 0 1em;
+  }
+}
 
+/* header */
 .header {
-  margin: 1.5em auto;
-  padding: 1.5em;
+  padding: 2.5em;
   text-align: center;
 }
 
 .title {
-  color: var(--title-color);
+  font-size: 2.6rem;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 0.9;
   margin-bottom: 0.3em;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 1;
+  color: var(--dark-text-color);
 }
 
 @media (min-width: 35em) {
@@ -55,46 +64,56 @@ body {
 }
 
 .subheading {
-  color: var(--text-description-color);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 300;
-  font-style: italic;
+  color: var(--text-description-color);
 }
 
 /* main content */
-
 .main {
+  padding: 3.5em 2em;
+  border-top: 1px solid var(--border-color);
   background-color: var(--form-color);
-  color: var(--text-color);
-  padding: 2em;
+  color: var(--light-text-color);
 }
 
+
 @media (min-width: 35em) {
+  :root {
+    --gap: 0.8em;
+
+    --input-font-size: 0.8rem;
+  }
+
   .main {
     max-width: 35em;
     margin: 0 auto 2em;
-    border-radius: 25px;
-    border: 3px solid var(--border-color);
+    border-radius: 2.5em;
+    border: 1px solid var(--border-color);
+    padding: 3.5em 3em;
   }
 }
 
 @media (min-width: 50em) {
+  :root {
+    --gap: 0.9em; 
+
+    --input-font-size: 0.9rem;
+  }
   .main {
     max-width: 40em;
-    padding: 3em 2em;
+    padding: 4em;
   }
 }
 
+
 fieldset {
   border: none;
+  margin-bottom: var(--gap);
 }
 
-fieldset + fieldset {
-  margin: 1.2em 0;
-}
-
-fieldset > * + * {
-  margin: 1em 0;
+fieldset * {
+  margin-bottom: var(--gap);
 }
 
 label {
@@ -107,95 +126,95 @@ label {
   font-size: 1.2rem;
 }
 
+@media (min-width: 35em) and (max-width: 50em) {
+  legend,
+  label {
+    font-size: 1.1rem;
+  }
+}
+
 .description {
   font-weight: 300;
 }
 
 /* inputs */
-
 input::placeholder,
 textarea::placeholder {
-  color: var(--input-text-color);
+  color: var(--dark-text-color);
   font-weight: 300;
 }
 
 input:not([type="radio"]):not([type="checkbox"]),
 textarea {
+  height: var(--input-height);
   width: 100%;
-  height: 3.6em;
-  font-size: 0.8rem;
   font-family: inherit;
+  font-size: var(--input-font-size);
   font-weight: 400;
-  margin-top: 0.5em;
-  padding: 1em 2em;
+  margin-top: var(--gap);
   border-radius: 1em;
+  border: 1px solid var(--border-color);
+  padding: var(--input-padding);
   background-color: var(--input-color);
   color: var(--input-text-color);
-  border: 2px solid var(--border-color);
 }
 
 textarea {
-  height: 7.5em;
+  height: 9em;
 }
 
 .select {
-  font-size: 0.8rem;
-  height: 3.6em;
-  border: 2px solid var(--border-color);
+  font-size: var(--input-font-size);
+  height: var(--input-height);
+  border: 1px solid var(--border-color);
   border-radius: 1em;
   overflow: hidden;
 }
 
 select {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-family: inherit;
-  text-indent: 1.5em;
   width: 100%;
   height: 100%;
   border: none;
+  padding: var(--input-padding);
   outline: none;
-  color: var(--input-text-color);
+  color: var(--dark-text-color);
   background-color: var(--input-color);
 }
 
-select:hover {
+select:hover,
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
   cursor: pointer;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
   vertical-align: middle;
-  margin: 0 0.5em 0 1em;
-}
-
-input[type="radio"]:hover,
-input[type="checkbox"]:hover {
-  cursor: pointer;
+  margin: 0 0.5em;
 }
 
 /* submit button */
-
 .submit-button {
   position: relative;
   display: block;
   width: 100%;
-  padding: 1.2em;
-  border-radius: 0.7em;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 400;
   font-family: inherit;
-  border: 2px solid var(--border-color);
+  padding: var(--input-padding);
+  border-radius: 0.7em;
+  border: 1px solid var(--border-color);
   background-color: var(--button-color);
-  color: var(--button-text-color);
+  color: var(--dark-text-color);
 }
 
 .submit-button:hover {
   cursor: pointer;
-  border-color: #fef6e4;
   font-weight: 700;
 }
 
 .submit-button:active {
   top: 2px;
-  left: 1px;
 }
